@@ -1,0 +1,76 @@
+<!-- Full name: Lai Minh Huy
+   COMP 229 – Web Application Development
+   Student ID: 301225382
+   Date: 08/10/2023
+   Created by Huy Lai. Copyright Fall 2023. All Rights reserved to Huy Lai
+-->
+
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/main_nav.ejs') %>
+
+<!-- Service Start -->
+<div class="container-xxl service py-5">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="display-5 mb-5">Services Available</h1>
+        </div>
+
+        <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-lg-4">
+                <div class="nav nav-tabs flex-column" id="myTab" role="tablist">
+                    <a class="nav-link active" id="tab-pane-1-tab" data-toggle="tab" href="#tab-pane-1" role="tab" aria-controls="tab-pane-1" aria-selected="true">
+                        <h3 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Web Development</h3>
+                    </a>
+                    <a class="nav-link" id="tab-pane-2-tab" data-toggle="tab" href="#tab-pane-2" role="tab" aria-controls="tab-pane-2" aria-selected="false">
+                        <h3 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Programming</h3>
+                    </a>
+                    <a class="nav-link" id="tab-pane-3-tab" data-toggle="tab" href="#tab-pane-3" role="tab" aria-controls="tab-pane-3" aria-selected="false">
+                        <h3 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Database Management / Analytics</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="tab-pane-1" role="tabpanel" aria-labelledby="tab-pane-1-tab">
+                        <h3 class="mb-4">Web Development</h3>
+                        <img src="/images/web.jpg" alt="Web Image" class="mb-4" width="400" height="300">
+                        <p class="mb-4">Comprehensive web development services, combining creativity and technical expertise to build visually stunning and highly functional websites. From responsive design and seamless navigation to robust backend development and user-friendly content management systems, my services ensure an engaging online presence that aligns with your brand, drives traffic, and delivers an exceptional user experience.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Web Design</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Responsive Websites</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>User Experience (UX)</p>
+                        <!-- Content for Web Development Tab -->
+                    </div>
+                    <div class="tab-pane fade" id="tab-pane-2" role="tabpanel" aria-labelledby="tab-pane-2-tab">
+                        <h3 class="mb-4">Programming</h3>
+                        <img src="/images/project2.jpg" alt="Programming Image" class="mb-4" width="400" height="300">
+                        <p class="mb-4">Professional programming services, delivering efficient and high-quality solutions tailored to meet your specific needs. With expertise in multiple programming languages and frameworks, I develop custom applications, software tools, and automation solutions that streamline processes, enhance productivity, and optimize business operations. Through clean code practices, rigorous testing, and agile methodologies, I ensure reliable and scalable software solutions that empower businesses to thrive in the digital landscape.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Programming Solutions</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Custom Applications</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Software Development</p>
+                        <!-- Content for Programming Tab -->
+                    </div>
+                    <div class="tab-pane fade" id="tab-pane-3" role="tabpanel" aria-labelledby="tab-pane-3-tab">
+                        <h3 class="mb-4">Database Management / Analytics</h3>
+                        <img src="/images/data.jpg" alt="Programming Image" class="mb-4" width="400" height="300">
+                        <p class="mb-4">Helping businesses harness the power of data to drive informed decision-making and gain valuable insights. From designing and optimizing databases to data modeling, extraction and transformation, I ensure efficient data management and integration. Leveraging advanced analytics techniques, I enable businesses to unlock patterns, trends, and actionable intelligence from their data, empowering them to make strategic, data-driven decisions for enhanced performance and growth.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Database Management</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Analytics</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Data-driven Decision Making</p>
+                        <!-- Content for Database Management / Analytics Tab -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="/projects" class="btn" style="position: absolute; margin-left: 100px;margin-top: 50px;" > Back page</a>
+    <a href="/" class="btn" style="position: absolute; margin-left: 400px;margin-top: 50px;" > Next page</a>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+<!-- Service End -->
+
+<%- include ('partials/bottom_nav.ejs') %>
+<%- include ('partials/footer.ejs') %>

@@ -1,0 +1,92 @@
+<!-- Full name: Lai Minh Huy
+   COMP 229 – Web Application Development
+   Student ID: 301225382
+   Date: 08/10/2023
+   Created by Huy Lai. Copyright Fall 2023. All Rights reserved to Huy Lai
+-->
+
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/main_nav.ejs') %>
+
+<main class="container">
+<div class="jumbotron">
+
+    <h1 style="position: absolute; left: 500px; top: 200px;font-size: 50px; font-family: Arial, Helvetica, sans-serif;"><%= title %> Me</h1>
+    
+    </div>
+    <div class="home-img">
+        <img style="position: absolute;left: 150px; top: 200px; border-radius: 20px;" src="/images/Profile.jpg" alt="pic" height="460px" width="330px"/>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div  class="aboutcontent" style="position: absolute;left: 500px;top: 280px;">
+        <h2>Software Engineering Technician</h2>
+        <p>Hello everyone, I am going to introduce myself. My name is <b>Lai Minh Huy</b> I am 33 years old student of Software Engineering Techinician
+ 
+            
+            <!-- Link to call centennial college on click-->
+
+             at <a href= "https://www.centennialcollege.ca/programs-courses/full-time/software-engineering-technician" target="_blank"><b>Centennial College</a></b>, I come from Viet Nam and Please click in the link to check my <a href="/images/HUY LAI - CV 2023.docx" target="_blank"><b>Resume.</a></b></p> 
+             
+             <!-- Link to Centennial website -->
+
+        <div class="tabs">
+            <div class="tab education-tab">Education</div>
+            <div class="tab skills-tab">Skills</div>
+        </div>
+
+        <div class="details education-details">
+            <p>University: El Camino - Degree: Associate in Accounting - Graduation Year: 2022</p>
+            <p>College: Centennial - Degree: Associate in Software Engineering - Graduation Year:2024</p>
+        </div>
+
+        <div class="details skills-details">
+            <p>* Advanced level in modern Javascript and libraries/frameworks </p> 
+            <p>* Data Analysis using relational SQL and NoSQL database.</p>
+            <p>* Proven leadership, interpersonal and collaboration skills. </p>
+        </div>
+        
+
+        <a href="/" class="btn" style="position: absolute; margin-left: 100px"> Back Page</a>
+        <a href="/contact" class="btn" style="position: absolute; margin-left: 400px"> Next Page</a>
+        
+    </div>
+   
+</main>
+
+<script>
+    const tabs = document.querySelectorAll('.tab');
+    const details = document.querySelectorAll('.details');
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            if (details[index].style.display === 'block') {
+                details[index].style.display = 'none';
+            } else {
+                details.forEach((detail) => {
+                    detail.style.display = 'none';
+                });
+                details[index].style.display = 'block';
+            }
+        });
+    });
+</script>
+
+
+
+<%- include ('partials/bottom_nav.ejs') %>
+<%- include ('partials/footer.ejs') %>
+
+
+
+   

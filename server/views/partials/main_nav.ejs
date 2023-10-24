@@ -1,0 +1,92 @@
+<!-- Full name: Lai Minh Huy
+   COMP 229 – Web Application Development
+   Student ID: 301225382
+   Date: 08/10/2023
+   Created by Huy Lai. Copyright Fall 2023. All Rights reserved to Huy Lai
+-->
+
+<!--Main Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+
+    <div class="container-fluid">
+      <img class="logohead" src="/images/logo.png" alt="logo" style: width="250px"; height="60px">
+      <link rel="stylesheet" href="/Content/app.css">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-max ml-auto mb-2 mb-lg-0">
+
+          <b>
+
+            <li class="nav-item">
+              <% if (title == "Home") { %>
+                <a class="nav-link active" aria-current="page" href="/home">
+              <% } else { %>
+                <a class="nav-link" aria-current="page" href="/home">
+              <% } %>
+                <i class="fas fa-home fa-shake"></i> Home </a>
+              </li>
+    
+              <li class="nav-item">
+              <% if (title == "About Me") { %>
+                <a class="nav-link active" aria-current="page" href="/about">
+              <% } else { %>
+                <a class="nav-link" aria-current="page" href="/about">
+              <% } %>
+                <i class="fas fa-user fa-shake"></i> About </a>
+              </li>
+    
+              <li class="nav-item">
+              <% if (title == "Projects") { %>
+                <a class="nav-link active" aria-current="page" href="/projects">
+              <% } else { %>
+                <a class="nav-link" aria-current="page" href="/projects">
+              <% } %>
+                <i class="fas fa-project-diagram fa-shake"></i> Projects </a>
+              </li>
+    
+              <li class="nav-item">
+              <% if (title == "Services") { %>
+                <a class="nav-link active" aria-current="page" href="/services">
+              <% } else { %>
+                <a class="nav-link" aria-current="page" href="/services">
+              <% } %>
+                <i class="fas fa-cog fa-shake"></i> Services </a>
+              </li>
+    
+              <li class="nav-item">
+              <% if (title == "Contact Me") { %>
+                <a class="nav-link active" aria-current="page" href="/contact">
+              <% } else { %>
+                <a class="nav-link" aria-current="page" href="/contact">
+              <% } %>
+                <i class="fas fa-envelope fa-shake"></i> Contact </a>
+              </li>
+    
+              <li class="nav-item">
+              <% if (title == "Business Contact List") { %>
+                <a class="nav-link active" aria-current="page" href="/business-contact-list">
+              <% } else { %>
+                <a class="nav-link" aria-current="page" href="/business-contact-list">
+              <% } %>
+                <i class="fas fa-book fa-shake"></i> Business Contacts </a>
+              </li>
+    
+              <% if(typeof displayName == 'string' && displayName) { %>
+                <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
+                <li class="nav-item"><a href="/logout" class="nav-link">
+                  <i class="fas fa-sign-out-alt fa-bounce"></i> Logout</a></li>
+              <% } else { %>
+                <li class="nav-item"><a href="/login" class="nav-link">
+                  <i class="fas fa-sign-in-alt fa-bounce"></i> Login</a></li>
+              <% } %>
+
+
+        </b>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--Main Navigation end-->

@@ -1,0 +1,257 @@
+/* Full name: Lai Minh Huy
+   COMP 229 – Web Application Development
+   Student ID: 301225382
+   Date: 08/10/2023
+   Created by Huy Lai. Copyright Fall 2023. All Rights reserved to Huy Lai
+*/
+
+.fade-in {
+  transition: transform 0.3s; /* Add a transition effect */
+}
+
+/* Define the transformation when hovering */
+.fade-in:hover {
+  transform: scale(1.05); /* Adjust the scale factor as needed */
+}
+
+/* Define your custom animation */
+.custom-animation {
+  transition: transform 0.3s ease-in-out;
+}
+
+.custom-animation:hover {
+  transform: rotate(20deg); /* Adjust the rotation angle as needed */
+}
+
+.animate__pulse:hover
+{
+  transform: scale(1.05); /* Adjust the scale factor as needed */
+
+  /* Add your desired animation class */
+  animation: pulse 0.5s infinite;
+
+  transition: transform 0.3s;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-30px);
+  }
+  60% {
+      transform: translateY(-15px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+}
+
+.tabs-container {
+  display: flex;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px;
+  border: 2px solid #3498db;
+  margin: 5px;
+  user-select: none;
+}
+
+.tab:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.details {
+  display: none;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  width: 1080px;
+}
+
+body 
+{
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a 
+{
+  color: #00B7FF;
+}
+
+ul.navbar-max {
+  list-style: none; /* Remove the bullet */
+  display: inline; /* Display the list items inline */
+  float:right;
+  font-size:20px
+  
+}
+
+ul.navbar-max li {
+  display: inline-block; /* Make the list items display inline */
+}
+a:link {
+text-decoration: none;
+}
+
+
+.nav-item{
+font-size: 18px;
+margin-left: 50px;
+color: aliceblue;
+font-weight: 500;
+
+}
+.nav-item :active,
+
+.nav-item:hover 
+{
+font-size: 26px;
+background: linear-gradient(45deg, #f06, #3cf);
+--webkit-background-clip: text;
+color: whitesmoke;
+}
+
+.nav-link 
+{
+text-decoration: none; /* Remove the default underline */
+font-size: 18px; /* Default font size */
+transition: font-size 0.3s; /* Smooth font size transition on hover */
+}
+
+.logohead{
+pointer-events: none;
+text-decoration: none;
+font-size: 25px;
+}
+.homecontent{
+font-size: 25px;
+font-weight: 30px;
+line-height: 1.2;
+max-width: 700px;
+border-radius: 20px;
+}
+
+.aboutcontent{
+font-size: 25px;
+font-weight: 30px;
+line-height: 1.2;
+
+max-width: 800px;
+border-radius: 20px;
+}
+
+.btn{
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 180px;
+height: 48px;
+color:#fff;
+font-size: 19px;
+border-radius: 40px;
+background: yellowgreen;
+letter-spacing: 1px;
+font-weight: 600;
+}
+
+.btn:hover
+{
+content: '';
+position: absolute;
+background: linear-gradient(45deg,#f06, #3cf,#f06);
+border-radius: 40px;
+background-size:200%;
+}
+
+.row1
+{
+  margin-left: -230px;
+  margin-right: 100px;
+}
+
+.home-sci a {
+margin-top: 20px;
+margin-left: 50px;
+display: flex;
+width: 50px;
+justify-content: center;
+align-items: center;
+height: 50px;
+background:linear-gradient(45deg, #f06,#3cf);
+border-radius: 50%;
+font-size: 20px;
+color: #fff;
+text-decoration: none;
+z-index: 1;
+}
+.home-sci a::after{
+content: '';
+position: absolute;
+border-radius: 50%;
+transform: scale(.88);
+z-index: -1;
+transition: .5s ease;
+}
+
+.home-sci a:hover::after{
+transform: scale(0);
+
+}
+
+a:visited {
+text-decoration: none;
+}
+
+
+a:hover {
+text-decoration: none;
+}
+
+
+a:active {
+text-decoration: none;
+}
+
+html,
+body {
+height: 100%;
+margin: 0;
+}
+
+body {
+display: flex;
+flex-direction: column;
+}
+
+body{
+background:#dbdbec ;
+}
+
+
+main {
+flex: 1;
+}
+
+
+footer {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 10px;
+}
+
+footer .navbar-text {
+  margin-bottom: 0;
+}

@@ -1,0 +1,64 @@
+<!-- Full name: Lai Minh Huy
+   COMP 229 – Web Application Development
+   Student ID: 301225382
+   Date: 08/10/2023
+   Created by Huy Lai. Copyright Fall 2023. All Rights reserved to Huy Lai
+-->
+
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/main_nav.ejs') %>
+
+<main class="container">
+
+    <div class="jumbotron">
+    <h1 style="margin-top: 20px;margin-left: 50px;">How To <%= title %> Me</h1>
+    </div>
+
+    <section>
+    <div class="home-sci">
+        <a href= "https://www.facebook.com/huylai68" target="_blank"><i class='fa-brands fa-facebook fa-beat'></i></a>
+        <a href= "https://github.com/Vincentlai90" target="_blank"><i class='fa-brands fa-github fa-beat' ></i></a>   
+        <a href= "https://www.linkedin.com/in/huy-lai" target="_blank"><i class="fa-brands fa-linkedin fa-beat"></i></i></a>
+    </div>
+
+    <div style="margin-top: 20px;margin-left: 50px">
+        <h2>Above is all my contact information, you can leave your information in the form below.</h2>
+    </div>
+
+    <form action="/submitForm" method="post">
+        <div style="display: block; padding-left: 50px; padding-top: 30px; font-size: 20px;" class="form-contact">
+            <div style="padding-bottom: 10px;">
+                <label for="first_name">Name: </label>
+                <input type="text" id="first_name" name="first_name" placeholder="First name" style="margin-left: 70px">
+                <input type="text" id="last_name" name="last_name" placeholder="Last name">
+            </div>
+            <div style="padding-bottom: 10px;">
+                <label for="email">Contact: </label>
+                <input type="text" id="email" name="email" placeholder="Email" style="margin-left: 55px">
+                <input type="text" id="phone" name="phone" placeholder="Phone Number">
+            </div>
+            <div style="padding-bottom: 10px;">
+                <label for="message"></label>
+                <input type="text" id="message" name="message" style="margin-left: 130px; padding-bottom: 40px; padding-right: 150px; border-radius: 10;" placeholder="Your Message">
+            </div>
+            <input type="submit" value="SUBMIT" style="margin-left: 130px" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="reset" id="reset" class="button1" value="CLEAR FORM" />
+        
+        </div>
+        
+    </form>
+
+    <a href="/about" class="btn" style="position: absolute; margin-left: 100px;margin-top: 50px;" > Back Page</a>
+    <a href="/projects" class="btn" style="position: absolute; margin-left: 400px;margin-top: 50px;" > Next Page</a>
+
+
+</main>
+
+
+<%- include ('partials/bottom_nav.ejs') %>
+<%- include ('partials/footer.ejs') %>
+
+
+
+   
