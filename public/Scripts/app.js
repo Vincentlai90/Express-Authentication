@@ -1,28 +1,124 @@
 /* Full name: Lai Minh Huy
    COMP 229 – Web Application Development
    Student ID: 301225382
-   Date: 08/10/2023
+   Date: 01/11/2023
    Created by Huy Lai. Copyright Fall 2023. All Rights reserved to Huy Lai
 */
 
-// IIFE -- Immediately Invoked Function Expression
-(function() {
-    function Start() {
-        console.log("App Started...");
+/* pagination code from http://www.bootply.com/lxa0FF9yhw */
+$.fn.pageMe = function(opts){
+    var $this = this,
+        defaults = {
+            perPage: 7,
+            showPrevNext: false,
+            hidePageNumbers: false
+        },
+        settings = $.extend(defaults, opts);
 
-        // prompts the user before deleting database entry
-        let deleteButtons = document.querySelectorAll('.delete-button');
+    var listElement = $this;
+    var perPage = settings.perPage;
+    var children = listElement.children();
+    var pager = $('.pager');
 
-        for (button of deleteButtons) {
-            button.addEventListener('click', (event) => {
-                console.log("Button clicked"); // Log that the button was clicked
-                if (!confirm("Are you sure you want to delete this entry?")) {
-                    event.preventDefault();
-                    window.location.assign('/business-contact-list');
-                }
-            });
-        }
+    if (typeof settings.childSelector!="undefined") {
+        children = listElement.find(settings.childSelector);
     }
 
-    window.addEventListener("load", Start);
+    if (typeof settings.pagerSelector!="undefined") {
+        pager = $(settings.pagerSelector);
+    }
+
+    var numItems = children.size();
+    var numPages = Math.ceil(numItems/perPage);
+
+    pager.data("curr",0);
+
+    if (settings.showPrevNext){
+        $('<li><a href="#" class="prev_link">«</a></li>').appendTo(pager);
+    }
+
+    var curr = 0;
+    while(numPages > curr && (settings.hidePageNumbers==false)){
+        $('<li><a href="#" class="page_link">'+(curr+1)+'</a></li>').appendTo(pager);
+        curr++;
+    }
+
+    if (settings.showPrevNext){
+        $('<li><a href="#" class="next_link">»</a></li>').appendTo(pager);
+    }
+
+    pager.find('.page_link:first').addClass('active');
+    pager.find('.prev_link').hide();
+    if (numPages<=1) {
+        pager.find('.next_link').hide();
+    }
+  	pager.children().eq(1).addClass("active");
+
+    children.hide();
+    children.slice(0, perPage).show();
+
+    pager.find('li .page_link').click(function(){
+        var clickedPage = $(this).html().valueOf()-1;
+        goTo(clickedPage,perPage);
+        return false;
+    });
+    pager.find('li .prev_link').click(function(){
+        previous();
+        return false;
+    });
+    pager.find('li .next_link').click(function(){
+        next();
+        return false;
+    });
+
+    function previous(){
+        var goToPage = parseInt(pager.data("curr")) - 1;
+        goTo(goToPage);
+    }
+
+    function next(){
+        goToPage = parseInt(pager.data("curr")) + 1;
+        goTo(goToPage);
+    }
+
+    function goTo(page){
+        var startAt = page * perPage,
+            endOn = startAt + perPage;
+
+        children.css('display','none').slice(startAt, endOn).show();
+
+        if (page>=1) {
+            pager.find('.prev_link').show();
+        }
+        else {
+            pager.find('.prev_link').hide();
+        }
+
+        if (page<(numPages-1)) {
+            pager.find('.next_link').show();
+        }
+        else {
+            pager.find('.next_link').hide();
+        }
+
+        pager.data("curr",page);
+      	pager.children().removeClass("active");
+        pager.children().eq(page+1).addClass("active");
+
+    }
+};
+
+// IIFE
+(function(){
+  $(".btn-danger").click(function(event){
+    if(!confirm("Are you sure to delete it?")) {
+      event.preventDefault();
+      window.location.assign("/business-contact-list");
+    }
+  });
+
+ /* pagination code */
+  $('#myTable').pageMe(
+    {pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:6}
+    );
 })();
